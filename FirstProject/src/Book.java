@@ -109,8 +109,8 @@ class MainBook{
         eBook.bookType();
         System.out.println(eBook.getBookInfo());
         eBook.printBookDetails();
-        PrintedBook printedBook2 = new PrintedBook("Harry Potter", "JK Rowling", 1990, 700, "Bloomsbury Publishing", 900);
-        EBook eBook2 = new EBook("To Kill a Mockingbird", "Harper Lee", 1960, 200, "EPUB", 890);
+        PrintedBook printedBook2 = new PrintedBook("War and Peace", "Tolstoy", 1800, 1400, "Sovet Union", 3000);
+        EBook eBook2 = new EBook("Jerry of the Islands", "Jack London", 1917, 10, "PDF", 300);
 
         printedBook2.bookType();
         printedBook2.printBook();
