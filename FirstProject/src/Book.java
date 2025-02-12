@@ -103,6 +103,7 @@ class MainBook{
         PrintedBook printedBook = new PrintedBook("Harry Potter", "JK Rowling", 1990, 700, "Bloomsbury Publishing");
         EBook eBook = new EBook("To Kill a Mockingbird", "Harper Lee", 1960, 200, "EPUB");
         printedBook.bookType();
+        printedBook.printBook();
         System.out.println(printedBook.getBookInfo());
         printedBook.printBookDetails();
         eBook.bookType();
@@ -112,6 +113,7 @@ class MainBook{
         EBook eBook2 = new EBook("To Kill a Mockingbird", "Harper Lee", 1960, 200, "EPUB", 890);
 
         printedBook2.bookType();
+        printedBook2.printBook();
         System.out.println(printedBook2.getBookInfo());
         printedBook2.printBookDetails();
         eBook2.bookType();
