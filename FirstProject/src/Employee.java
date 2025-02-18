@@ -1,7 +1,7 @@
 public abstract class Employee {
-    String name;
-    int id;
-    int baseSalary;
+    protected String name;
+    protected int id;
+    protected int baseSalary;
 
     public Employee(String name, int id, int baseSalary) {
         this.name = name;
