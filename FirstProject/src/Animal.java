@@ -1,3 +1,6 @@
+import tools.Tool;
+
+
 public class Animal {
     String name;
     int age;
@@ -84,5 +87,12 @@ class MainAnimal{
         egiptian.eat();
         ovcharka.makeSound();
         ovcharka.eat();
+
+
+
+        Tool t =  new Tool();
+        t.y = 4;
+
+
     }
 }
