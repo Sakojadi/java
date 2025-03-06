@@ -22,10 +22,12 @@ public class Tests {
 //    }
 
     public static void calc(){
-        int num1 = 5;
-        double num2 = 5.6;
-        double result = num1+num2;
-        System.out.println(result);
+        HashMap <Integer, String> hash = new HashMap <Integer, String>();
+        hash.put(1,"lol");
+        hash.put(9, "pop");
+        hash.put(2, "kok");
+        System.out.println(hash);
+        System.out.println(hash.get(1));
     }
 
 }
