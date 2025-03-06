@@ -102,7 +102,7 @@ public class StudentManager {
     }
 
     public void displayAllStudents() {
-        students.values().stream().sorted(Comparator.comparingInt(Student::getId)).forEach(System.out::println);
+        students.values().stream().sorted(Comparator.comparingInt(Students::getId)).forEach(System.out::println);
     }
 
     public void searchStudentById(int id) {
