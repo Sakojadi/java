@@ -40,10 +40,8 @@ class Students {
     public void addCourse(String course) {
         courses.add(course);
     }
-
-    @Override
     public String toString() {
-        return "ID: " + id + ", Name: " + name + ", Age: " + age + ", Courses: " + courses;
+        return "\nID: " + id + "\nName: " + name + "\nAge: " + age + "\nCourses: " + courses ;
     }
 }
 
@@ -87,7 +85,7 @@ public class StudentManager {
             student.setAge(age);
             System.out.println("Updated age to: " + age);
         } else {
-            System.out.println("No student found with ID: " + id);
+            System.out.println("No student found with ID: " +id);
         }
     }
 
@@ -95,27 +93,29 @@ public class StudentManager {
         Students student = students.get(id);
         if (student != null) {
             student.addCourse(course);
-            System.out.println("Added course " + course + " to student ID " + id);
+            System.out.println("Added course "+ course+" to student ID " +id);
         } else {
-            System.out.println("No student found with ID: " + id);
+            System.out.println("No student found with ID: "+ id);
         }
     }
 
     public void displayAllStudents() {
-        students.values().stream().sorted(Comparator.comparingInt(Students::getId)).forEach(System.out::println);
+        for(Students i: students.values()){
+            System.out.println(i.toString());
+        }
     }
 
     public void searchStudentById(int id) {
         Students student = students.get(id);
         if (student != null) {
-            System.out.println(student);
+            System.out.println(student.toString());
         } else {
             System.out.println("No student found with ID: " + id);
         }
     }
 
     public void listStudentsByCourse(String course) {
-        System.out.println("Students enrolled in " + course + ":");
+        System.out.println("Students enrolled in " +course + ":");
         for (Students student : students.values()) {
             if (student.getCourses().contains(course)) {
                 System.out.println(student.getName());
@@ -128,29 +128,23 @@ class MainStudent {
     public static void main(String[] args) {
         StudentManager manager = new StudentManager();
         
-        manager.addStudent(1, "Alice", 20);
+        manager.addStudent(3, "Alice", 20);
         manager.addStudent(2, "Bob", 22);
-        manager.addStudent(3, "Charlie", 21);
+        manager.addStudent(1, "Charlie", 21);
 
-        manager.addCourseToStudent(1, "Java Programming");
-        manager.addCourseToStudent(1, "Data Structures");
+        manager.addCourseToStudent(3, "Java Programming");
+        manager.addCourseToStudent(3, "Data Structures");
         manager.addCourseToStudent(2, "Java Programming");
-        manager.addCourseToStudent(3, "Algorithms");
+        manager.addCourseToStudent(1, "Algorithms");
 
-        System.out.println("\nAll students:");
         manager.displayAllStudents();
-
-        System.out.println("\nSearching for student with ID 2:");
         manager.searchStudentById(2);
         
-        System.out.println("\nUpdating Bob's age:");
         manager.updateStudentAge(2, 23);
         manager.searchStudentById(2);
 
-        System.out.println("\nStudents enrolled in Java Programming:");
         manager.listStudentsByCourse("Java Programming");
 
-        System.out.println("\nRemoving student with ID 3:");
         manager.removeStudent(3);
         manager.displayAllStudents();
     }
