@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class Tests {
     public static void main(String[] args){
@@ -22,12 +21,13 @@ public class Tests {
 //    }
 
     public static void calc(){
-        HashMap <Integer, String> hash = new HashMap <Integer, String>();
-        hash.put(1,"lol");
-        hash.put(9, "pop");
-        hash.put(2, "kok");
-        System.out.println(hash);
-        System.out.println(hash.get(1));
+        PriorityQueue<String> list = new PriorityQueue<>();
+        list.add("CCC");
+        list.add("BBB");
+        list.add("Aaaa");
+
+        System.out.println(list.poll());
+
     }
 
 }
