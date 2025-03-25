@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -14,6 +15,7 @@ class Task implements Comparable<Task> {
         this.priority = priority;
         this.duration = duration;
     }
+    @Override
     public int compareTo(Task other) {
         if (this.priority == other.priority) {
             return Integer.compare(this.duration, other.duration);
@@ -27,8 +29,15 @@ class Task implements Comparable<Task> {
 }
 
 public class TaskScheduler {
-    private PriorityQueue<Task> taskQueue = new PriorityQueue<>();
-    private Queue<Task> pendingQueue = new LinkedList<>();
+    private PriorityQueue<Task> taskQueue;
+    private Queue<Task> pendingQueue;
+    private HashMap<Task, ArrayList<LocalDateTime>> completed;
+
+    public TaskScheduler() {
+        taskQueue = new PriorityQueue<>();
+        pendingQueue = new LinkedList<>();
+        completed = new HashMap<>();
+    }
 
     public void addTask(Task task) {
         taskQueue.offer(task);
